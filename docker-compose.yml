@@ -15,6 +15,10 @@ services:
 
   adminer:
     image: adminer
+    depends_on:
+      - db
+    environment:
+      ADMINER_DEFAULT_SERVER: db
     restart: always
     ports:
       - 8081:8080
